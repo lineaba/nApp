@@ -1,11 +1,8 @@
-// nApp/app/index.js
-
+import clock from "clock";
 import document from "document";
-import * as messaging from "messaging";
-import { HeartRateSensor } from "heart-rate";
 import { vibration } from "haptics";
-import { me } from "appbit";
 import * as CDTimer from "../common/CountdownTimer.js";
+
 
 let background = document.getElementById("background");
 
