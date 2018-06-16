@@ -39,7 +39,7 @@ hrm.start();
 
 // Declare an event handler that will be called every time a new HR value is received.
 hrm.onreading = function() {
-  console.log(`Print pulse`);
+  console.log(`Reading pulse`);
   // make device vibrate if heart rate falls below resting pulse rate
   if (hrm.heartRate < resting_pulse_rate) {
     console.log(`target hit`); 
