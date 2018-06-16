@@ -2,6 +2,7 @@ import clock from "clock";
 import document from "document";
 import * as util from "../common/utils";
 import * as time from "../common/time";
+import { vibration } from "haptics";
 
 
 // napTime to be user input
