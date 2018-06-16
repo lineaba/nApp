@@ -1,6 +1,7 @@
 import clock from "clock";
 import document from "document";
 import { vibration } from "haptics";
+import { me } from "appbit";
 
 
 // napTime to be user input
@@ -8,17 +9,29 @@ const napTime = '1';
 
 // Get a handle on the <text> element
 const myLabel = document.getElementById("myLabel");
+ 
+// button function: up to start countdown timer
+const listenButton = function() {
+  // CONTROL BUTTON to start countdown
+  document.onkeypress = function(e) {
+    if (e.key === "up") {
+      console.log("Key pressed: " + e.key); //just prints to log that button has been pressed
+      startCountdownTimer();
+    }
+    else {
+      console.log("Key pressed: " + e.key); //just prints to log that button has been pressed
+      me.exit(); //doesn't exit, need to check how to exit app on down arrow
+    }
+  }
+}
 
 // set naptTime & allow user to start timer with button
-const setNapTime = function(napTime) {
-  this.napTime = napTime();
+function setNapTime(t) {
+  napTime = t;
   // update
-  myLabel.text = `${this.napTime}`;
-  // CONTROL BUTTON 
-  document.onkeypress = function(e) {
-    console.log("Key pressed: " + e.key); //just prints to log that button has been pressed
-    startCountdownTimer();
-  }
+  myLabel.text = `${napTime}`;
+  // CONTROL BUTTON
+  listenButton();
 }
 
 // start countdown timer
