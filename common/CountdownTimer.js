@@ -11,7 +11,7 @@ const napTime = '1';
 const myLabel = document.getElementById("myLabel");
  
 // button function: up to start countdown timer
-const listenButton = function() {
+export const listenButton = function() {
   // CONTROL BUTTON to start countdown
   document.onkeypress = function(e) {
     if (e.key === "up") {
@@ -26,7 +26,7 @@ const listenButton = function() {
 }
 
 // set naptTime & allow user to start timer with button
-function setNapTime(t) {
+export function setNapTime(t) {
   napTime = t;
   // update
   myLabel.text = `${napTime}`;
@@ -35,7 +35,7 @@ function setNapTime(t) {
 }
 
 // start countdown timer
-const startCountdownTimer = function() {
+export const startCountdownTimer = function() {
   napTime++;
   // updates the clock every minute
   clock.granularity = "minutes";
@@ -53,6 +53,6 @@ const startCountdownTimer = function() {
 }
 
 // update minutes left on clock face
-const updateTimer = (minsLeft) => {
+export const updateTimer = (minsLeft) => {
     myLabel.text = `${minsLeft}`;
 }
