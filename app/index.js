@@ -13,12 +13,10 @@ messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
   if (evt.data.key === "bpm") {
     let bpm = JSON.parse(evt.data.newValue);
-    console.log(`Setting background color: ${bpm.name}`);
-    label.text = bpm.name;
+    resting_pulse_rate = bpm.name;
   }
   else if (evt.data.key === "minutes") {
     let minutes = JSON.parse(evt.data.newValue);
-    label.text = minutes.name;
   }
 };
 
