@@ -16,11 +16,12 @@ export const listenButton = function() {
   document.onkeypress = function(e) {
     if (e.key === "up") {
       console.log("Key pressed: " + e.key); //just prints to log that button has been pressed
+      console.log("Countdown started.")
       startCountdownTimer();
     }
     else {
       console.log("Key pressed: " + e.key); //just prints to log that button has been pressed
-      me.exit(); //doesn't exit, need to check how to exit app on down arrow
+      me.exit(); 
     }
   }
 }
@@ -28,7 +29,7 @@ export const listenButton = function() {
 // set naptTime & allow user to start timer with button
 export const setNapTime = function(t) {
   napTime = t;
-  // update
+  // show nap time on clockface
   myLabel.text = `${napTime}`;
   // CONTROL BUTTON
   listenButton();
@@ -36,7 +37,7 @@ export const setNapTime = function(t) {
 
 // start countdown timer
 export const startCountdownTimer = function() {
-  napTime++;
+  let cdTime = napTime + 1;
   // updates the clock every minute
   clock.granularity = "minutes";
   // start ticking (per minute) the clock
@@ -48,7 +49,6 @@ export const startCountdownTimer = function() {
       vibration.start("ring");
       console.log("Fitbit alarm vibrating.")
     }
-    updateTimer(napTime);
   }
 }
 
