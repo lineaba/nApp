@@ -4,6 +4,8 @@ import document from "document";
 import * as messaging from "messaging";
 import { HeartRateSensor } from "heart-rate";
 import { vibration } from "haptics";
+import { me } from "appbit";
+import * as CDTimer from "../common/CountdownTimer.js";
 
 let background = document.getElementById("background");
 
@@ -47,3 +49,7 @@ hrm.onreading = function() {
     hrm.stop();
   }
 }
+
+// set countdown
+CDTimer.setNapTime('1');
+setInterval(() => {console.log("1 minute has passed.")}, 60000) ;
