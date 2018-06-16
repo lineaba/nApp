@@ -6,7 +6,10 @@ import { HeartRateSensor } from "heart-rate";
 import { vibration } from "haptics";
 
 let background = document.getElementById("background");
-let label = document.getElementById("input");
+
+//resting pulse rate is hardcoded to 20 for now--we will figure out user input later
+var resting_pulse_rate = 77;
+
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
@@ -32,9 +35,6 @@ messaging.peerSocket.onclose = () => {
 
 
 //Function to make device vibrate when heart rate falls below resting pulse rate
-
-//resting pulse rate is hardcoded to 20 for now--we will figure out user input later
-var resting_pulse_rate = 77;
 
 var hrm = new HeartRateSensor();
 
