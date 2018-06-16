@@ -6,19 +6,14 @@ import { HeartRateSensor } from "heart-rate";
 import { vibration } from "haptics";
 
 let background = document.getElementById("background");
-let label = document.getElementById("input");
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
   console.log(`App received: ${JSON.stringify(evt)}`);
-  if (evt.data.key === "bpm") {
-    let bpm = JSON.parse(evt.data.newValue);
-    console.log(`Setting background color: ${bpm.name}`);
-    label.text = bpm.name;
-  }
-  else if (evt.data.key === "minutes") {
-    let minutes = JSON.parse(evt.data.newValue);
-    label.text = minutes.name;
+  if (evt.data.key === "color" && evt.data.newValue) {
+    let color = JSON.parse(evt.data.newValue);
+    console.log(`Setting background color: ${color}`);
+    background.style.fill = color;
   }
 };
 
@@ -52,4 +47,3 @@ hrm.onreading = function() {
     hrm.stop();
   }
 }
-
