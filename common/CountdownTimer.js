@@ -5,10 +5,10 @@ import { me } from "appbit";
 
 
 // napTime to be user input
-const napTime = '1';
+export const napTime = '1';
 
 // Get a handle on the <text> element
-const myLabel = document.getElementById("myLabel");
+export const myLabel = document.getElementById("myLabel");
  
 // button function: up to start countdown timer
 export const listenButton = function() {
@@ -26,7 +26,7 @@ export const listenButton = function() {
 }
 
 // set naptTime & allow user to start timer with button
-export function setNapTime(t) {
+export const setNapTime = function(t) {
   napTime = t;
   // update
   myLabel.text = `${napTime}`;
