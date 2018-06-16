@@ -6,6 +6,10 @@ import { HeartRateSensor } from "heart-rate";
 import { vibration } from "haptics";
 
 let background = document.getElementById("background");
+let hrLabel = document.getElementById("hrm");
+
+//initialize hrLabel
+hrLabel.text = "-- bpm"
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
@@ -39,11 +43,12 @@ hrm.start();
 
 // Declare an event handler that will be called every time a new HR value is received.
 hrm.onreading = function() {
-  console.log(`Reading pulse`);
+  console.log(`current pulse: ` + hrm.heartRate);
+  hrLabel.text = hrm.heartRate + " bpm";
   // make device vibrate if heart rate falls below resting pulse rate
   if (hrm.heartRate < resting_pulse_rate) {
-    console.log(`target hit`); 
-    vibration.start("ring");    
+    console.log(`target hit`);
+    vibration.start("ring");
     hrm.stop();
   }
 }
