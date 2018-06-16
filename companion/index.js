@@ -1,3 +1,5 @@
+// nApp/companion/index.js
+
 import * as messaging from "messaging";
 import { settingsStorage } from "settings";
 
