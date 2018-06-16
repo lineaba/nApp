@@ -1,3 +1,4 @@
 <svg>
   <rect id="background" />
+  <text id="hrm" x="0" y="75%" class="defaultText">00</text>
 </svg>
