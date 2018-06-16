@@ -1,7 +1,5 @@
 import clock from "clock";
 import document from "document";
-import * as util from "../common/utils";
-import * as time from "../common/time";
 import { vibration } from "haptics";
 
 
@@ -35,6 +33,7 @@ const startCountdownTimer = function() {
     if (napTime === 0) {
       clock.granularity = "off";
       vibration.start("ring");
+      console.log("Fitbit alarm vibrating.")
     }
     updateTimer(napTime);
   }
