@@ -24,7 +24,7 @@ messaging.peerSocket.onmessage = evt => {
     console.log(`Ap`);
     let minutes = JSON.parse(evt.data.newValue);
     time = minutes.name;
-      CDTimer.setNapTime('90');
+//       CDTimer.setNapTime('90');
   }
  };
 
