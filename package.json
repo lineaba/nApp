@@ -1,0 +1,20 @@
+{
+  "fitbit": {
+    "appUUID": "d9218251-c523-45fd-b03f-a6197fb10a4e",
+    "appType": "app",
+    "appDisplayName": "CDT2",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#03a9f4",
+    "requestedPermissions": [
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "higgs"
+    ],
+    "i18n": {
+      "en": {
+        "name": "CDT2"
+      }
+    }
+  }
+}
